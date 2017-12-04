@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- react library -->
+  <script src ="https://unpkg.com/react@15.5.4/dist/react.js"></script>
+  <!-- react DOM library -->
+  <script src ="https://unpkg.com/react-dom@15.5.4/dist/react-dom.js"></script>
+  <!-- Babel library -->
+  <script src ="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+  <title>BoilerPlate Code</title>
+</head>
+<body>
+  <div id ="app">React has not rendered yet</div>
+  <script type="text/babel">
+class Voting extends React.Component{
+constructor(props){
+  super(props);
+  this.state={
+    votes:0
+  }
+  // this.handleButtonUp=this.handleButtonUp.bind(this);
+  // this.handleButtonDown=this.handleButtonDown.bind(this);
+}
+handleButtonUp(){
+  this.setState({
+    votes: this.state.votes+1
+  });
+}
+handleButtonDown(){
+  this.setState({
+    votes: this.state.votes-1
+  });
+}
+  render(){
+    var votingStyle={
+      display:"inline-block",
+      padding:0,
+      margin:15,
+      height:480,
+      width:300,
+      backgroundColor:"#F7F7F7",
+      textAlign:"center",
+      WebkitFilter: "drop-shadow(0px 0px 5px #555)",
+      filter:"drop-shadow(0px 0px 5px #555)"
+    }
+    var avatarStyle={
+      height:200,
+      width:200
+    }
+    return(
+      <div style={votingStyle}>
+      <h1>Voting App</h1>
+      <img src={this.props.img} alt="Display Picture" style={avatarStyle}/>
+      <p>If you like him</p>
+      <button onClick={()=>this.handleButtonUp}>+1</button>
+      <p>If not</p>
+      <button onClick={()=>this.handleButtonDown}>-1</button>
+      <p>Total votes:{this.state.votes}</p>
+      </div>
+    );
+  }
+}
+    ReactDOM.render(
+      <div>
+  <Voting img="https://pbs.twimg.com/profile_images/806151298840203264/3tRXLz-N_400x400.jpg"/>
+  <Voting img="https://pbs.twimg.com/profile_images/934385699096109056/yq2LUDTw_400x400.jpg"/>
+  <Voting img="https://pbs.twimg.com/profile_images/923186043234410496/pHNY_Jc__400x400.jpg"/>
+  <Voting img="https://pbs.twimg.com/profile_images/929711199998050304/Mc4obUlh_400x400.jpg"/>
+  </div>,
+  document.getElementById("app")
+    );
+  </script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>React | stateless functional component</title>
+  <!-- react library -->
+  <script src ="https://unpkg.com/react@15.5.4/dist/react.js"></script>
+  <!-- react DOM library -->
+  <script src ="https://unpkg.com/react-dom@15.5.4/dist/react-dom.js"></script>
+  <!-- Babel library -->
+  <script src ="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+</head>
+<body>
+  <div id ="app">React has not rendered yet</div>
+<script type="text/babel">
+var Violet = function(){
+  return(
+    <h2>violet</h2>
+  );
+}
+var Indigo = function(){
+  return(
+    <h2>indigo</h2>
+
+  );
+}
+var Blue =  function(){
+  return(
+    <h2>blue</h2>
+  );
+}
+var Green = function(){
+  return(
+    <h2>green</h2>
+  );
+}
+var Yellow = function(){
+  return(
+    <h2>yellow</h2>
+  );
+}
+var Orange =function(){
+  return(
+    <h2>orange</h2>
+);
+}
+var Red = function(){
+  return(
+    <h2>red</h2>
+  );
+}
+ReactDOM.render(
+  <div>
+<Violet/>
+<Indigo/>
+<Blue/>
+<Green/>
+<Yellow/>
+<Orange/>
+<Red/>
+  </div>,
+  document.getElementById("app")
+);
+
+</script>
+</body>
+</html>

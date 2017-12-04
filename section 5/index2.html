@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- react library -->
+  <script src ="https://unpkg.com/react@15.5.4/dist/react.js"></script>
+  <!-- react DOM library -->
+  <script src ="https://unpkg.com/react-dom@15.5.4/dist/react-dom.js"></script>
+  <!-- Babel library -->
+  <script src ="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+  <title>Props | class component</title>
+</head>
+<body>
+  <div id ="app">React has not rendered yet</div>
+  <script type="text/babel">
+  class Person extends React.Component{
+    render(){
+      var personStyle={
+        height:75,width:150,backgroundColor:this.props.color
+      }
+      return(
+        <h1 style={personStyle}>Hi,{this.props.name}</h1>
+      );
+    }
+  }
+    ReactDOM.render(
+      <div>
+        <Person color="red" name="Navin"/>
+        <Person color="blue" name="Prasad"/>
+        <Person color="green" name="kumar"/>
+
+      </div>,
+      document.getElementById("app")
+    );
+  </script>
+</body>
+</html>

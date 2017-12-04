@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>React | Capstone project</title>
+  <!-- react library -->
+  <script src ="https://unpkg.com/react@15.5.4/dist/react.js"></script>
+  <!-- react DOM library -->
+  <script src ="https://unpkg.com/react-dom@15.5.4/dist/react-dom.js"></script>
+  <!-- Babel library -->
+  <script src ="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+  <!-- font awesome -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+  <div id="app"> React has not rendered yet</div>
+  <script type="text/babel">
+  // Details Component
+function Details(){
+  var detailStyle={
+    height:300,
+    width:200,
+    padding:0,
+    backgroundColor:"#FFF",
+    webkitFilter: "drop-shadow(0px 0px 5px #555)",
+    filter:"drop-shadow(0px 0px 5px #555)"
+
+  }
+  return(
+    <div style={detailStyle}>
+    <Avatar/>
+    <UserName/>
+    <Connection/>
+    </div>
+  );
+}
+  // Avatar Component
+function Avatar(){
+  var avatarStyle={
+    marginLeft:20,
+    marginTop:20,
+    width:150,
+    height:150,
+    borderRadius:"50%"
+  }
+  return(
+    <img style={avatarStyle} src="https://pbs.twimg.com/profile_images/806151298840203264/3tRXLz-N_400x400.jpg" alt="user picture"/>
+  );
+}
+  // UserName Component
+function UserName(){
+  var nameStyle={
+    fontSize:24,
+    margin:20,
+    fontFamily:"Arial, Helvetica, sans-serif"
+  }
+  return(
+    <h1 style={nameStyle}>Navin Prasad</h1>
+  );
+}
+  // Connection Component
+  function Connection(){
+    return(
+      <div>
+      <Like/>
+      <Share/>
+      <Add/>
+      </div>
+    );
+  }
+  var iconStyle={
+    margin:20
+  }
+  function Like(){
+    return(
+      <i style={iconStyle} className="fa fa-thumbs-up" aria-hidden="true"></i>
+    );
+  }
+  function Share(){
+    return(
+      <i style={iconStyle} className="fa fa-share" aria-hidden="true"></i>
+    )
+  }
+  function Add(){
+    return(
+      <i style={iconStyle} className="fa fa-users" aria-hidden="true"></i>
+    );
+  }
+    ReactDOM.render(
+      <Details/>,
+      document.getElementById("app")
+    );
+  </script>
+</body>
+</html>

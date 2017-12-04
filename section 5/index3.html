@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Props | stateless functional component</title>
+  <!-- react library -->
+  <script src ="https://unpkg.com/react@15.5.4/dist/react.js"></script>
+  <!-- react DOM library -->
+  <script src ="https://unpkg.com/react-dom@15.5.4/dist/react-dom.js"></script>
+  <!-- Babel library -->
+  <script src ="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+</head>
+<body>
+  <div id ="app">React has not rendered yet</div>
+<script type="text/babel">
+var ColorSpectrum = function(props){
+  var colorSpectrumStyle={
+    width:150,height:75,
+    backgroundColor:props.color
+  }
+  return(
+    <div>
+<h1 style={colorSpectrumStyle}>{props.label}</h1>
+    </div>
+  );
+
+}
+ReactDOM.render(
+  <div>
+  <ColorSpectrum color="violet" label="violet"/>
+  <ColorSpectrum color="indigo" label="indigo"/>
+  <ColorSpectrum color="blue" label="blue"/>
+  <ColorSpectrum color="green" label="green"/>
+  <ColorSpectrum color="yellow" label="yellow"/>
+  <ColorSpectrum color="orange" label="orange"/>
+  <ColorSpectrum color="red" label="red"/>
+
+  </div>,
+  document.getElementById("app")
+);
+
+</script>
+</body>
+</html>

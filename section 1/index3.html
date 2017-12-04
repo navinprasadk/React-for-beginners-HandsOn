@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<!-- react library -->
+<script src ="https://unpkg.com/react@15.5.4/dist/react.js"></script>
+<!-- react DOM library -->
+<script src ="https://unpkg.com/react-dom@15.5.4/dist/react-dom.js"></script>
+<!-- Babel library -->
+<script src ="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+  <title>Let's React</title>
+</head>
+<body>
+  <!-- designated location to insert react element -->
+  <div id="app"></div>
+<!-- javascript -->
+  <script type="text/babel">
+// create variables for jsx and location
+// variables for jsx
+var hello=<h1>Hello World</h1>;
+// variables for location
+var destination=document.getElementById("app");
+// <!-- render react to the dom - it accepts 2 arguments (react what, react where) -->
+ReactDOM.render(
+// <!-- react what - variable for jsx-->
+hello,
+// <!-- react where - variable for location -->
+destination
+);
+</script>
+</body>
+</html>

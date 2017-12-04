@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- react library -->
+  <script src ="https://unpkg.com/react@15.5.4/dist/react.js"></script>
+  <!-- react DOM library -->
+  <script src ="https://unpkg.com/react-dom@15.5.4/dist/react-dom.js"></script>
+  <!-- Babel library -->
+  <script src ="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+  <title>BoilerPlate Code</title>
+</head>
+<body>
+  <div id ="app">React has not rendered yet</div>
+  <script type="text/babel">
+
+class SampleForm extends React.Component{
+  constructor(props){
+    super(props);
+    this.state={
+      value:""
+    }
+  }
+  handleSubmit(){
+alert(this.state.value);
+event.preventDefault();
+  }
+  handleInputChange(event){
+this.setState({
+  value:event.target.value
+});
+  }
+render(){
+  return(
+    <div>
+    <form onSubmit={this.handleSubmit.bind(this)}>
+    <p>Enter your name</p>
+    <input type="text" value={this.state.value} onChange={this.handleInputChange.bind(this)}/>
+    <input type="submit" value="submit" />
+    </form>
+    </div>
+  );
+}
+
+}
+    ReactDOM.render(
+  <SampleForm/>,
+  document.getElementById("app")
+    );
+  </script>
+</body>
+</html>
